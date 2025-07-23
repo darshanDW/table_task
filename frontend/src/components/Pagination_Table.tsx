@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import { Checkbox } from "primereact/checkbox";
@@ -75,6 +75,7 @@ const [remainingToSelect, setRemainingToSelect] = useState<number>(0);
   };
 
 const onCheckboxChange = (e: CheckboxChangeEvent, artworkId: number) => {
+    console.log("Checkbox changed for artwork ID:", artworkId, "Checked:", e.checked);
   setSelectedArtworks((prevSelected) =>
     !prevSelected.includes(artworkId)
       ? [...prevSelected, artworkId]
